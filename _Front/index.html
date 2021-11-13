@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en, id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <style>
+    body {
+      background-color: gray;
+    }
+
+    .carousel-item img {
+      height: 100vh;
+    }
+
+    .carousel-caption img {
+      width: 35%;
+      height: auto;
+    }
+  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <title>Home</title>
+</head>
+
+<body>
+
+  <div id="banner" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#banner" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#banner" data-bs-slide-to="1"></button>
+    </div>
+
+    <nav class="navbar fixed-top mt-3">
+      <div class="container-fluid">
+        <a href="#navigasi" class="navbar-brand" data-bs-toggle="offcanvas">Nav</a>
+        <form class="d-flex shadow-lg p-3 mb-5 bg-body rounded">
+          <input type="search" class="form-control me-5" placeholder="Search" aria-label="Search">
+          <button class="btn btn-primary navbar-brand" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#navigasi">Open
+            Nav</button>
+        </form>
+      </div>
+
+      <div class="offcanvas offcanvas-start" id="navigasi">
+        <div class="offcanvas-header">
+          <h1 class="offcanvas-title">Judul</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+
+        <div class="offcanvas-body">
+          <h3>Bagian</h3>
+          <p>Halaman</p>
+        </div>
+      </div>
+    </nav>
+
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <img src="img (6).jpeg" alt="Keluarga" class="d-block mx-auto">
+        <div class="carousel-caption text-center font-monospace lh-sm align-middle">
+          <a href="#"><img src="img (4).jpeg" alt="Pergi ke.." class="img-thumbnail"></a>
+          <h3>Judul 800 char</h3>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore, dolor! Atque autem corrupti ipsam
+            architecto corporis odio nihil dignissimos a iste. Quae illo nam iste sequi distinctio cupiditate,
+            laudantium reprehenderit, corrupti totam dolore, quasi assumenda veniam a nesciunt impedit doloribus.
+            Recusandae dolorem facilis voluptatibus laborum nisi? Eum similique modi voluptatibus explicabo ut est
+            repudiandae saepe itaque assumenda debitis rem perferendis maiores id, ab odio quis illo exercitationem quod
+            repellat error laboriosam molestiae quia. Deserunt dolor adipisci temporibus illo aut non est aspernatur,
+            exercitationem nisi illum recusandae quae, odio veniam sint unde. Dolorem cumque doloribus odit adipisci
+            perferendis debitis ducimus esse?</p>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="WIN_20210818_15_07_26_Pro.jpg" alt="Ceceh" class="d-block mx-auto">
+        <div class="carousel-caption">
+          <h3>Ceceh</h3>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga tenetur non pariatur!</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</html>
