@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en, id">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+        display: block;
+      }
+      a:hover {
+        background-color: #1a1a1a;
+      }
+      li {
+        list-style: none;
+      }
+      body {
+        font-family: bahnschrift, sans-serif;
+        /*overflow: hidden;*/
+        overflow-x: hidden;
+        margin: 0 20px;
+        background-color: #848484;
+        color: black;
+        letter-spacing: 1px;
+      }
+
+      /*Drag & Drop file*/
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+
+      .container {
+        display: flex;
+        background-color: lightgrey;
+      }
+
+      .drag-area {
+        border: 2px dashed #fff;
+        height: 250px;
+        width: 250px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+
+      .drag-area.active {
+        border: 2px solid white;
+      }
+
+      .drag-area header {
+        font-size: 15px;
+        font-weight: 500;
+        color: white;
+      }
+
+      .drag-area span {
+        font-size: 12px;
+        font-weight: 400;
+        color: white;
+        margin: 10px 0 15px 0;
+      }
+
+      .drag-area button {
+        padding: 5px 10px;
+        font-size: 13px;
+        font-weight: 450;
+        border: none;
+        /*outline: none;*/
+        background: white;
+        color: gray;
+        /*border-radius: 5px;*/
+        cursor: pointer;
+      }
+
+      .drag-area img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+
+      button.clear {
+        background: yellow;
+        color: black;
+        padding: 5px;
+        box-sizing: border-box;
+        font-size: 15px;
+      }
+      /*End Drag & Drop file*/
+
+      nav {
+        background-color: lightgrey;
+        display: flex;
+        justify-content: space-between;
+        /*justify-content: space-around;*/
+        height: 50px;
+        align-items: center;
+      }
+
+      nav ul {
+        background-color: #474747;
+        display: flex;
+        /*justify-content: space-around;*/
+        justify-content: space-evenly;
+        /*justify-content: space-between;*/
+        /*min-height: 8vh;*/
+        width: 48%;
+        transition: all 0.8s ease;
+      }
+
+      .burger {
+        display: flex;
+        height: 20px;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        z-index: 2;
+        /*cursor: pointer;*/
+      }
+      .burger input {
+        position: absolute;
+        height: 28px;
+        width: 28px;
+        top: -4px;
+        opacity: 0;
+        cursor: pointer;
+      }
+      .burger span {
+        width: 28px;
+        height: 3px;
+        border-radius: 3px;
+        background-color: #1a1a1a;
+        transition: all 0.5s ease-in-out;
+      }
+      .burger span:nth-child(2) {
+        width: 17px;
+      }
+      .burger span:last-child {
+        width: 23px;
+      }
+      .burger input:checked ~ span:nth-child(2) {
+        width: 28px;
+      }
+      .burger input:checked ~ span:last-child {
+        width: 28px;
+      }
+
+      .button {
+        background-color: #474747;
+        display: flex;
+        align-items: center;
+      }
+
+      @media screen and (max-width: 768px) {
+        nav ul {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100vh;
+          flex-direction: column;
+          align-items: center;
+          z-index: 1;
+          transform: translateX(-100%);
+          opacity: 0;
+          /*background: linear-gradient(to right, #474747, transparent);*/
+        }
+        nav ul.slide {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+      @media screen and (max-width: 992px) {
+        nav li {
+          background: linear-gradient(to right, #474, transparent);
+        }
+      }
+      @media screen and (max-width: 1200px) {
+        /*nav ul {
+          background: linear-gradient(to right, #474, transparent);
+        }*/
+      }
+    </style>
+    <title>Home</title>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Responsif Navigasi Bar -->
+    <!-- <nav>
+
+      <div class="burger">
+        <input type="checkbox">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul>
+        <li><a href="#">test</a></li>
+        <li><a href="#">test 1</a></li>
+        <li><a href="#">test 2</a></li>
+      </ul>
+
+      <label>
+        <input type="text" placeholder="Cari..">
+      </label>
+
+      <span class="button">
+        <a href="#">Login!</a>
+      </span>
+
+    </nav> -->
+
+    <!-- Drag & Drop file image -->
+    <div class="drag-area">
+
+      <header>Drag & Drop to Upload File</header>
+
+      <span>OR</span>
+
+      <button>Browse File</button>
+      <input type="file" hidden>
+
+    </div>
+
+    <button class="clear">Clear</button>
+
+  </div>
+  
+</body>
+<script>
+  // const burger = document.querySelector('.burger input')
+  // const nav = document.querySelector('nav ul')
+
+  // burger.addEventListener('click', function(){
+  //   nav.classList.toggle('slide')
+  // })
+
+  // Drag & Drop file
+  const taroFile = document.querySelector('.drag-area'),
+        gantiTeks = taroFile.querySelector('header'),
+        tombol = taroFile.querySelector('button'),
+        input = taroFile.querySelector('input')
+
+  let file
+
+  tombol.onclick = ()=>{
+
+    input.click()
+
+  }
+
+  input.addEventListener('change', function() {
+
+    file = this.files[0]
+
+    taroFile.classList.add('active')
+
+    tampilkan()
+
+  })
+
+  taroFile.addEventListener('dragover', (aksi)=>{
+
+    aksi.preventDefault()
+
+    taroFile.classList.add('active')
+
+    gantiTeks.textContent = 'Release File'
+
+  })
+
+  taroFile.addEventListener('dragleave', ()=>{
+
+    taroFile.classList.remove('active')
+
+    gantiTeks.textContent = 'On HERE'
+
+  })
+
+  taroFile.addEventListener('drop', (aksi)=>{
+
+    aksi.preventDefault()
+
+    file = aksi.dataTransfer.files[0]
+
+    tampilkan()
+
+  })
+
+  tampilkan = ()=>{
+
+    let fileType = file.type
+    let fileValid = ['image/jpg', 'image/jpeg', 'image/png']
+
+    if (fileValid.includes(fileType)) {
+
+      let fileReader = new FileReader()
+
+      fileReader.onload = ()=>{
+
+        let fileURL = fileReader.result
+        let imgTag = '<img src='+ fileURL +'>'
+
+        taroFile.innerHTML = imgTag
+
+      }
+
+      fileReader.readAsDataURL(file)
+
+    } else {
+
+      alert('ini bukan file gambar')
+
+      taroFile.classList.remove('active')
+
+      gantiTeks.textContent = 'Only Allowed File Image'
+
+    }
+
+  }
+</script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
+</html>
