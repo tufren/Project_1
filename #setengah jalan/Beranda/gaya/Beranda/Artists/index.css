@@ -1,0 +1,31 @@
+/* Artists */
+.halaman-artists {
+  background-color: mediumpurple;
+}
+
+.daftar-artists ul {
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto auto auto auto auto auto;
+  justify-content: space-between;
+}
+
+.daftar-artists li {
+  margin-top: 14px;
+}
+
+.daftar-artists li:hover {
+  background-color: red;
+}
+
+.daftar-artists a {
+  width: 200px;
+  text-align: center;
+  gap: 20px;
+}
+
+.daftar-artists img {
+  width: 100%;
+  padding: 4px;
+  border-radius: 10%;
+}

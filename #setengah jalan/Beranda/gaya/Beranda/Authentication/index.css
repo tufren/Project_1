@@ -1,0 +1,44 @@
+/* Authentication */
+.halaman-login {
+  background-color: aquamarine;
+  height: 650px;
+}
+
+.tombol-ke-beranda a {
+  background-color: royalblue;
+  width: 40px;
+  height: 40px;
+  /* z-index: 10; */
+}
+
+.tombol-ke-beranda a img {
+  width: 40px;
+}
+
+.form-login {
+  height: 400px;
+  width: 450px;
+  background-color: #474747;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  margin: 118px 414px;
+}
+
+.form-login input {
+  height: 32px;
+  width: 280px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 18px;
+  background-color: lightgray;
+}
+
+h5 {
+  font-size: medium;
+  font-weight: 500;
+}

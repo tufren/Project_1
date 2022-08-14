@@ -1,0 +1,91 @@
+/* Navigasi */
+nav {
+  /*background-color: tomato; */
+ display: grid;
+ grid-template-columns: auto auto auto;
+ /* justify-content: space-between; */
+ height: 50px;
+ align-items: center;
+}
+
+nav ul {
+ display: flex;
+ justify-content: space-evenly;
+ width: 28%;
+ transition: all 0.8s ease;
+}
+
+nav ul {
+ position: absolute;
+ top: 0;
+ left: 0;
+ height: 100vh;
+ flex-direction: column;
+ align-items: center;
+ z-index: 1;
+ transform: translateX(-100%);
+ opacity: 0;
+ background-color: #474747;
+}
+
+nav ul.slide {
+ transform: translateX(0);
+ opacity: 1;
+}
+
+nav ul li a {
+ /* margin: auto; */
+ /* font-size: 20px; */
+ font-weight: 100;
+ /* width: 380px; */
+ /* height: 100px; */
+ /* text-align: center; */
+ /* align-items: center; */
+ /* padding: 40%; */
+}
+
+nav ul li a:hover {
+ background-color: dimgray;
+}
+
+.burger {
+ display: flex;
+ height: 20px;
+ flex-direction: column;
+ justify-content: space-between;
+ position: relative;
+ z-index: 2;
+}
+
+.burger input {
+ position: absolute;
+ height: 28px;
+ width: 28px;
+ top: -4px;
+ opacity: 0;
+ cursor: pointer;
+}
+
+.burger span {
+ width: 28px;
+ height: 3px;
+ border-radius: 3px;
+ background-color: #1a1a1a;
+ transition: all 0.5s ease-in-out;
+}
+
+.burger span:nth-child(2) {
+ width: 17px;
+}
+
+.burger span:last-child {
+ width: 23px;
+}
+
+.burger input:checked~span:nth-child(2) {
+ width: 28px;
+}
+
+.burger input:checked~span:last-child {
+ width: 28px;
+}

@@ -1,0 +1,31 @@
+/*Konten*/
+.beranda {
+  /*background-color: skyblue;*/
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  margin: 100px 0 214px 0;
+  padding: 20px 10px;
+}
+
+.beranda span {
+  width: 400px;
+  color: white;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, .38);
+  cursor: default;
+}
+
+.beranda .profile {
+  width: 380px;
+  border: 5px solid black;
+  border-radius: 50%;
+  box-shadow: 0 1px 5px 3px rgba(0, 0, 0, .12);
+  cursor: pointer;
+}
+
+.beranda .product {
+  width: 380px;
+  box-shadow: 0 1px 5px 3px rgba(0, 0, 0, .12);
+  cursor: pointer;
+}

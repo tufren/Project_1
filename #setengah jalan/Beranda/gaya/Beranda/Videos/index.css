@@ -1,0 +1,27 @@
+/* Videos */
+.halaman-videos {
+  background-color: mediumspringgreen;
+}
+
+.daftar-video ul {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  /* justify-content: space-between; */
+}
+
+.daftar-video li {
+  background-color: royalblue;
+}
+
+.daftar-video li:hover {
+  background-color: red;
+}
+
+.daftar-video {
+  text-align: center;
+  /* gap: 20px; */
+}
+
+.daftar-video img {
+  height: 180px;
+}
